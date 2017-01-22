@@ -17,12 +17,21 @@ class Kickstarter {
          */
         function __construct($settings = '')
         {
-            $this->settings = $settings;
+            	$this->settings = $settings;
         }
     
         public function kickstarter(){
-                     
-            return 'It works.';   
+              	// Aufruf-Parameter bereinigen
+		foreach ($_POST as $key => $value) {
+		    $this->_postVars[$key] = ee('Security/XSS')->clean($value);
+		}
+		foreach ($_REQUEST as $key => $value) {
+		    $this->_requestVars[$key] = ee('Security/XSS')->clean($value);
+		}
+		foreach ($_GET as $key => $value) {
+		    $this->_getVars[$key] = ee('Security/XSS')->clean($value);
+		}         
+            	return 'It works.';   
         }
      
   }
