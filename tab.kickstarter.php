@@ -1,4 +1,4 @@
 <?php
-class Bootstrap_tab {
+class Kickstarter_tab {
     
 }
