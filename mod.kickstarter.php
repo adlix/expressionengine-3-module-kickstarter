@@ -20,7 +20,7 @@ class Kickstarter {
             $this->settings = $settings;
         }
     
-        public function css_tag(){
+        public function kickstarter(){
                      
             return 'It works.';   
         }
